@@ -21,6 +21,7 @@ public class InitDb {
 	@PostConstruct
 	public void init() {
 		initService.dbInit1();
+		initService.dbInit2();
 	}
 
 	@Component
@@ -49,7 +50,7 @@ public class InitDb {
 		}
 
 		public void dbInit2() {
-			Member member = createMember("userB", "진주", "2", "2222");
+			Member member = createMember("userB", "전주", "2", "2222");
 			em.persist(member);
 
 			Book book1 = createBook("SPRING1 BOOK", 20000, 200);
