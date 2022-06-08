@@ -24,7 +24,6 @@ import java.util.stream.Collectors;
 @RestController
 @RequiredArgsConstructor
 public class OrderSimpleApiController {
-
     private final OrderRepository orderRepository;
     private final OrderSimpleQueryRepository orderSimpleQueryRepository;
 
