@@ -95,4 +95,18 @@ public class OrderRepository {
         return em.createQuery("select o from Order o join fetch o.member m join fetch o.delivery d", Order.class).getResultList();
     }
 
+    public List<Order> findAllWithItem() {
+        return em.createQuery("select distinct o from Order o join fetch o.member m join fetch o.delivery d join fetch o.orderItems oi join fetch oi.item i", Order.class).getResultList();
+    }
+
+    /**
+     * to One 관계는 페이징이 문제없이 잘동작함.
+     */
+    public List<Order> findAllWithMemberDelivery(int offset, int limit) {
+        return em.createQuery("select o from Order o join fetch o.member m join fetch o.delivery d", Order.class)
+                .setFirstResult(offset)
+                .setMaxResults(limit)
+                .getResultList();
+    }
+
 }
