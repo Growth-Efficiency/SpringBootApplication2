@@ -2,16 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.6.7'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
-}
-
-apply plugin: "com.ewerk.gradle.plugins.querydsl"
-apply plugin: 'io.spring.dependency-management'
-
-//querydsl 추가
-buildscript {
-	dependencies {
-		classpath("gradle.plugin.com.ewerk.gradle.plugins:querydslplugin:1.0.10")
-	}
+	id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
 }
 
 group = 'jpabook'
